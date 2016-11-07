@@ -4,6 +4,30 @@
     <a href="/comments/new" class="btn btn-lg btn-success">New Comment</a>
   </h1>
 </div>
+<%= search_form_for @q do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :body_cont, "Body containing" %>
+    <%= f.text_field :body_cont, :class => "form-control", :placeholder => "Body containing" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :commenter_email_cont, "User email containing" %>
+    <%= f.text_field :commenter_email_cont, :class => "form-control", :placeholder => "User email containing" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :photo_caption_cont, "Photo caption contains" %>
+    <%= f.text_field :photo_caption_cont, :class => "form-control", :placeholder => "Photo caption contains" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+
+  <a href="/comments" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
+
+
 
 <div class="row">
   <div class="col-md-12">

@@ -4,6 +4,45 @@
     <a href="/photos/new" class="btn btn-lg btn-success">New Photo</a>
   </h1>
 </div>
+<%= search_form_for @q do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :caption_cont, "Caption contains" %>
+    <%= f.text_field :caption_cont, :class => "form-control", :placeholder => "Caption contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :owner_email_cont, "User email containing" %>
+    <%= f.text_field :owner_email_cont, :class => "form-control", :placeholder => "User email containing" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :comments_body_cont, "Comment body containing" %>
+    <%= f.text_field :comments_body_cont, :class => "form-control", :placeholder => "Comment body containing" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :fans_email_cont, "User email containing" %>
+    <%= f.text_field :fans_email_cont, :class => "form-control", :placeholder => "User email containing" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :followers_email_cont, "User email containing" %>
+    <%= f.text_field :followers_email_cont, :class => "form-control", :placeholder => "User email containing" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :commenters_email_cont, "User email containing" %>
+    <%= f.text_field :commenters_email_cont, :class => "form-control", :placeholder => "User email containing" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+
+  <a href="/photos" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
+
+
 
 
 <div class="row m-b-2">
